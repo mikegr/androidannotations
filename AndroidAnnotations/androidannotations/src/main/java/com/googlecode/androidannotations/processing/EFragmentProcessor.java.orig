@@ -15,7 +15,10 @@
  */
 package com.googlecode.androidannotations.processing;
 
+<<<<<<< HEAD:AndroidAnnotations/androidannotations/src/main/java/com/googlecode/androidannotations/processing/EFragmentProcessor.java
 import static com.googlecode.androidannotations.helper.ModelConstants.GENERATION_SUFFIX;
+=======
+>>>>>>> 189b9d9... Integration with HoloEverywhere:AndroidAnnotations/androidannotations/src/main/java/org/androidannotations/processing/EFragmentProcessor.java
 import static com.sun.codemodel.JExpr.FALSE;
 import static com.sun.codemodel.JExpr._new;
 import static com.sun.codemodel.JExpr._null;
@@ -25,13 +28,29 @@ import static com.sun.codemodel.JMod.FINAL;
 import static com.sun.codemodel.JMod.PRIVATE;
 import static com.sun.codemodel.JMod.PUBLIC;
 import static com.sun.codemodel.JMod.STATIC;
+import static org.androidannotations.helper.ModelConstants.GENERATION_SUFFIX;
 
+import java.lang.annotation.Annotation;
+
+import javax.annotation.processing.ProcessingEnvironment;
+import javax.lang.model.element.Element;
+import javax.lang.model.element.TypeElement;
+
+<<<<<<< HEAD:AndroidAnnotations/androidannotations/src/main/java/com/googlecode/androidannotations/processing/EFragmentProcessor.java
 import com.googlecode.androidannotations.annotations.EFragment;
-import com.googlecode.androidannotations.helper.HoloEverywhereHelper;
 import com.googlecode.androidannotations.helper.IdAnnotationHelper;
 import com.googlecode.androidannotations.processing.EBeansHolder.Classes;
 import com.googlecode.androidannotations.rclass.IRClass;
 import com.googlecode.androidannotations.rclass.IRClass.Res;
+=======
+import org.androidannotations.annotations.EFragment;
+import org.androidannotations.helper.HoloEverywhereHelper;
+import org.androidannotations.helper.IdAnnotationHelper;
+import org.androidannotations.processing.EBeansHolder.Classes;
+import org.androidannotations.rclass.IRClass;
+import org.androidannotations.rclass.IRClass.Res;
+
+>>>>>>> 189b9d9... Integration with HoloEverywhere:AndroidAnnotations/androidannotations/src/main/java/org/androidannotations/processing/EFragmentProcessor.java
 import com.sun.codemodel.ClassType;
 import com.sun.codemodel.JBlock;
 import com.sun.codemodel.JClass;
@@ -43,12 +62,6 @@ import com.sun.codemodel.JFieldVar;
 import com.sun.codemodel.JMethod;
 import com.sun.codemodel.JVar;
 
-import java.lang.annotation.Annotation;
-
-import javax.annotation.processing.ProcessingEnvironment;
-import javax.lang.model.element.Element;
-import javax.lang.model.element.TypeElement;
-
 public class EFragmentProcessor implements GeneratingElementProcessor {
 
 	private final IdAnnotationHelper helper;
@@ -57,6 +70,7 @@ public class EFragmentProcessor implements GeneratingElementProcessor {
 	public EFragmentProcessor(ProcessingEnvironment processingEnv, IRClass rClass) {
 		helper = new IdAnnotationHelper(processingEnv, getTarget(), rClass);
 		holoEverywhereHelper = new HoloEverywhereHelper(helper);
+
 	}
 
 	@Override
